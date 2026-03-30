@@ -1,0 +1,60 @@
+baseURL = ''
+languageCode = 'en-us'
+title = 'C21 Blog'
+theme = 'PaperMod'
+
+[markup.highlight]
+	lineNoStart = 1
+	lineNos = "table"
+	style = 'catppuccin-mocha'
+	wrapperClass = "highlight"
+
+[params]
+math = true
+showReadingTime = true
+ShowToc = true
+TocOpen = true
+hideFooter = true
+ShowCodeCopyButtons = true
+defaultTheme = "auto"
+# ShowShareButtons = true
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      strikethrough = true
+      table = true
+      taskList = true
+      linkify = true
+      definitionList = true
+			[markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.mark]
+          enable = true
+        [markup.goldmark.extensions.extras.delete]
+          enable = false
+        [markup.goldmark.extensions.extras.insert]
+          enable = true
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+
+[params.homeInfoParams]
+title = "Hi there 👋"
+content = "These are my notes, interpretations, and ideas gathered from reading, learning, and building. I share them hoping they're useful to others. Where ever I recall sources, I'll link them. Credit goes to the many whose work and knowledge I've learned from; any mistakes or misunderstandings are mine alone. When you spot an error or have a correction, please share it; feedback helps us all learn better."
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "Archives"
+url = "/archives"
+weight = 2
+

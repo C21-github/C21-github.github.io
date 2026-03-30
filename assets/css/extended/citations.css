@@ -1,0 +1,31 @@
+/* Blockquote Citation Styling */
+
+/* Add extra spacing for blockquotes with citations */
+blockquote.has-citation {
+  padding-bottom: 8px;
+}
+
+/* Citation footer styling */
+.blockquote-citation {
+  margin-top: 12px;
+  padding-top: 8px;
+  text-align: right;
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--secondary);
+  border-top: 1px solid var(--tertiary);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .blockquote-citation {
+  color: var(--secondary);
+  border-top-color: var(--tertiary);
+}
+
+/* Optional: Add a subtle icon before citation */
+.blockquote-citation::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+}

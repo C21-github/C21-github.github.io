@@ -1,0 +1,26 @@
+{{- /* Render blockquote with support for GitHub-style alerts/callouts */ -}}
+{{- if eq .Type "alert" -}}
+  {{- $alertType := .AlertType | lower -}}
+  {{- $title := "" -}}
+  {{- if .AlertTitle -}}
+    {{- $title = .AlertTitle -}}
+  {{- else -}}
+    {{- $title = .AlertType | title -}}
+  {{- end -}}
+  {{- $cite := index .Attributes "cite" -}}
+  <blockquote class="markdown-alert markdown-alert-{{ $alertType }}{{- if $cite }} has-citation{{- end }}">
+    <p class="markdown-alert-title"><strong>{{ $title }}</strong></p>
+    {{ .Text | safeHTML }}
+    {{- if $cite -}}
+      <footer class="blockquote-citation">— {{ $cite }}</footer>
+    {{- end -}}
+  </blockquote>
+{{- else -}}
+  {{- $cite := index .Attributes "cite" -}}
+  <blockquote{{- range $k, $v := .Attributes }} {{ $k | safeHTMLAttr }}="{{ $v | safeHTMLAttr }}"{{- end }}{{- if $cite }} class="has-citation"{{- end }}>
+    {{ .Text | safeHTML }}
+    {{- if $cite -}}
+      <footer class="blockquote-citation">— {{ $cite }}</footer>
+    {{- end -}}
+  </blockquote>
+{{- end -}}

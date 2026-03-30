@@ -1,0 +1,6 @@
+<details class="fold">
+  <summary role="button" aria-expanded="false">{{ .Get 0 | default "Click to expand" }}</summary>
+  <div class="fold-content">
+    {{ .Inner | markdownify }}
+  </div>
+</details>
