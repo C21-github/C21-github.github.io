@@ -17,6 +17,7 @@ TocOpen = true
 hideFooter = true
 ShowCodeCopyButtons = true
 defaultTheme = "auto"
+comments = true
 # ShowShareButtons = true
 
 [markup]
