@@ -58,6 +58,10 @@ weight = 1
 name = "Archives"
 url = "/archives"
 weight = 2
+[[menu.main]]
+name = "RSS"
+url = "/index.xml"
+weight = 3
 
 [caches]
   [caches.images]
